@@ -4,11 +4,12 @@ import TvMain from "./TvComponents/TvMain";
 import { api } from "../config";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "./FooterComponents/Footer";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [shows, setShows] = useState([]);
-  console.log(movies);
+
   const getMovies = async (termOne, termTwo) => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/${termOne}/${termTwo}?api_key=b39a6d50962ff85858b03b950b6d3958`
@@ -37,6 +38,9 @@ const App = () => {
         <MovieMain movies={movies} />
         <TvMain shows={shows} />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

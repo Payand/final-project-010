@@ -1,6 +1,6 @@
 export const api = {
   Header: {
-    nav: ["home", "movies", "tv-series", "documents", "top IMDB"],
+    nav: ["home", "movies", "tv-series", "about us"],
     navDisplay: [
       {
         id: "1",
@@ -9,8 +9,8 @@ export const api = {
         rate: "8.6",
         duration: "171",
         genre: ["Action", "Adventure"],
-        description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-        dolores obcaecati optio id voluptas est eos, delectus quibusdam`,
+        description: `After thirty years, Maverick is still pushing the envelope as a top naval aviator,
+        but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it.`,
         image: "/image/top-gun-mav.jpg",
       },
 
@@ -21,8 +21,7 @@ export const api = {
         rate: "6.6",
         duration: "112",
         genre: ["Action", "Sci-fi"],
-        description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-        dolores obcaecati optio id voluptas est eos, delectus quibusdam`,
+        description: `Eddie Brock attempts to reignite his career by interviewing serial killer Cletus Kasady, who becomes the host of the symbiote Carnage and escapes prison after a failed execution`,
         image: "/image/venom-2.jpg",
       },
       {
@@ -32,8 +31,8 @@ export const api = {
         rate: "8.6",
         duration: "130",
         genre: ["Action", "Sci-fi"],
-        description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-        dolores obcaecati optio id voluptas est eos, delectus quibusdam`,
+        description: `As Steve Rogers struggles to embrace his role in the modern world,
+         he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat from history: an assassin known as the Winter Soldier.`,
         image: "/image/cp-winter-2.jpg",
       },
       {
@@ -42,9 +41,9 @@ export const api = {
         quality: "HD",
         rate: "8.6",
         duration: "130",
-        genre: ["Action", "Sci-fi"],
-        description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-        dolores obcaecati optio id voluptas est eos, delectus quibusdam`,
+        genre: ["Action", "Crime"],
+        description:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dolores obcaecati optio id voluptas est eos, delectus quibusdam",
         image: "/image/legend.jpg",
       },
     ],

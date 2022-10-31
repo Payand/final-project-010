@@ -5,7 +5,7 @@ const TvHeader = () => {
     <section>
       <div className="container-movies">
         <div className="flex-container-tv">
-          <h2 id="tv">TV-Shows</h2>
+          <h2 id="tv-series">TV-Shows</h2>
           <span>
             Show All<i className="fa-solid fa-circle-play"></i>
           </span>

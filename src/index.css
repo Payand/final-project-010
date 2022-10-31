@@ -56,7 +56,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1em;
+
+  padding-top: 1.2em;
 }
 
 header nav ul {
@@ -81,7 +82,6 @@ header nav ul li a:hover {
 
 header nav ul li i {
   font-size: 1.2rem;
-
   width: 1.5em;
   height: 1.5em;
   text-align: center;
@@ -99,10 +99,9 @@ input[type="text"] {
   background-color: rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
   border-radius: 1.5em;
-
   height: 3em;
   width: 20em;
-  padding-left: 3em;
+  padding-left: 3.4em;
   transition: background-color 2s;
 }
 
@@ -229,6 +228,10 @@ input[type="text"]:hover {
   font-size: 1rem;
   color: red;
 }
+.p-header {
+  width: 70%;
+  font-weight: 500;
+}
 
 /* header carousel ends */
 /* main section starts */
@@ -267,7 +270,6 @@ input[type="text"]:hover {
   width: 95%;
   margin: 0 auto;
   justify-content: space-between;
-
   align-items: center;
 }
 
@@ -390,35 +392,68 @@ input[type="text"]:hover {
 
 /* footer starts */
 footer {
-  background-color: #150249;
+  background-color: #0e0131;
   width: 100%;
   height: 55vh;
   margin-top: 5em;
 }
-.footer-icons {
+.footer-display {
   display: flex;
-  flex-wrap: wrap;
-  height: 50vh;
-  justify-content: space-around;
-  align-content: center;
-  width: 65%;
-}
-.footer-icons i {
-  font-size: 2.5rem;
-  text-shadow: var(--text-shadow);
-  color: #ff00ff;
-}
-.footer-container p {
-  margin-top: 2em;
-  color: #8462ff;
-  text-shadow: var(--text-shadow);
-  text-align: justify;
 }
 .footer-container {
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+footer h3 {
+  color: white;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: #ffffff7c;
+}
+
+footer p {
+  line-height: 1.7em;
+  color: #ffffff7e;
+  font-weight: 200;
+}
+
+strong {
+  font-weight: 600;
+}
+.icon-flex {
+  display: flex;
+
+  width: 70%;
   justify-content: space-between;
   align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+.icon-sort {
+  display: flex;
+  flex-direction: column;
+}
+.icon-display p {
+  display: flex;
+  align-items: center;
+  color: #6200ff;
+  gap: 1.2em;
+  font-weight: 600;
+}
+.icon-display i {
+  font-size: 1.1rem;
+  border: 1px solid rgb(111, 111, 255);
+  padding: 0.6em 0.6em;
+  color: rgb(80, 80, 255);
+  border-radius: 5px;
 }
 
 /* footer ends  */

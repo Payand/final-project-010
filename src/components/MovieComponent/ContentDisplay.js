@@ -10,7 +10,7 @@ const ContentDisplay = ({ movies }) => {
               <div key={movie.id} className="flex-movies-container">
                 <img
                   className="img-card"
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                   alt={movie.title}
                   title={movie.title}
                 />

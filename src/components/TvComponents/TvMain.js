@@ -1,12 +1,12 @@
 import React from "react";
 
 import TvHeader from "./TvHeader";
-
-const TvMain = ({ shows }) => {
-  console.log(shows);
+import ContentDisplayTv from "./ContentDisplayTv";
+const TvMain = (shows) => {
   return (
     <>
       <TvHeader />
+      <ContentDisplayTv {...shows} />
     </>
   );
 };

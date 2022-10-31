@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import HeaderButtons from "./HeaderButtons";
-// Import Swiper styles
+// import HeaderButtons from "./HeaderButtons";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import "swiper/css/effect-fade";
+import "swiper/css/effect-fade";
 
 import { Autoplay, EffectFade, Keyboard, Navigation, Pagination } from "swiper";
 
@@ -26,9 +26,9 @@ const HeaderCarousel = ({ carousel }) => {
         keyboard={{
           enabled: true,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         modules={[Autoplay, EffectFade, Keyboard, Navigation, Pagination]}
         className="mySwiper"
       >
@@ -53,7 +53,8 @@ const HeaderCarousel = ({ carousel }) => {
                         <span>/{car.genre[1]}</span>
                       </li>
                     </ul>
-                    <HeaderButtons />
+                    {/* <HeaderButtons /> */}
+                    <p className="p-header">{car.description}</p>
                   </div>
                 </div>
               </SwiperSlide>
