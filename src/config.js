@@ -1,6 +1,11 @@
 export const api = {
   Header: {
-    nav: ["home", "movies", "tv-series", "about us"],
+    nav: [
+      { id: "11", title: "home" },
+      { id: "12", title: "movies" },
+      { id: "13", title: "tv-series" },
+      { id: "14", title: "about us" },
+    ],
     navDisplay: [
       {
         id: "1",

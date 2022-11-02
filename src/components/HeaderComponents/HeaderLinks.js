@@ -4,8 +4,8 @@ const HeaderLinks = ({ links }) => {
   return (
     <ul>
       {links.map((link) => (
-        <li key={link}>
-          <a href={"#" + link}>{link}</a>
+        <li key={link.id}>
+          <a href={"#" + link.title}>{link.title}</a>
         </li>
       ))}
       <HeaderSearch />

@@ -300,6 +300,7 @@ input[type="text"]:hover {
   border-radius: 5px;
   height: 50vh;
   object-fit: cover;
+  width: 100%;
 }
 
 .quality {
@@ -314,17 +315,22 @@ input[type="text"]:hover {
   background-color: #050000;
   border-radius: 3px;
 }
-
+/* 
+.nav-link {
+  width: inherit;
+} */
 .flex-card-box {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 0.1em;
+  color: white;
 }
 
 .flex-card-box p {
   font-weight: 600;
+  margin-top: 0.3em;
 }
 
 .flex-card-box-details {
@@ -458,6 +464,16 @@ strong {
 
 /* footer ends  */
 
+.single-page {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+}
+.single-page h1 {
+  font-size: 2rem;
+  text-shadow: 5px 5px 20px white;
+}
 /* Resposive starts  */
 
 @media (min-width: 280px) {

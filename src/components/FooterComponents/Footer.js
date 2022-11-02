@@ -28,13 +28,13 @@ const Footer = () => {
               <div className="icon-sort">
                 <div className="icon-display">
                   <p>
-                    <i class="fa-solid fa-crown"></i>
+                    <i className="fa-solid fa-crown"></i>
                     High qulity
                   </p>
                 </div>
                 <div className="icon-display">
                   <p>
-                    <i class="fa-solid fa-closed-captioning"></i>
+                    <i className="fa-solid fa-closed-captioning"></i>
                     Multi Subtitle
                   </p>
                 </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
                 <div className="icon-display">
                   <p>
-                    <i class="fa-solid fa-bolt-lightning"></i>
+                    <i className="fa-solid fa-bolt-lightning"></i>
                     Fast Load
                   </p>
                 </div>
