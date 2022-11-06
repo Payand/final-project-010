@@ -461,99 +461,169 @@ strong {
   color: rgb(80, 80, 255);
   border-radius: 5px;
 }
+.router-footer {
+  margin-top: 20em;
+  background-color: #0e0131;
+}
+.router-footer h3 {
+  color: white;
+  margin-top: 2em;
+}
 
 /* footer ends  */
 
 .single-page {
-  width: 100%;
+  position: absolute;
+  width: 95%;
+  height: 100vh;
   display: flex;
   gap: 2em;
-  margin-top: 2em;
+  margin-top: 10em;
+  top: 0;
+}
+.single-page img {
+  border-radius: 10px;
 }
 .single-page h1 {
   font-size: 2rem;
   text-shadow: 5px 5px 20px white;
 }
+
+.single-page ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0em;
+  gap: 2em;
+}
+.single-page ul li p {
+  font-size: 0.9rem;
+}
+.genra {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+}
+.single-page ul li span {
+  font-weight: 700;
+}
+
+.single-page ul li strong {
+  font-size: 1.2rem;
+  color: #3700fcad;
+}
+
+.login-button {
+  cursor: pointer;
+}
+
 /* Resposive starts  */
 
 @media (min-width: 280px) {
   .logo {
     font-size: 0.8rem;
   }
+  .mobile-nav {
+    display: block;
+  }
+
   header nav ul {
     display: none;
   }
-  .flex-header-text-container div ul {
-    gap: 3rem;
+
+  .swiper {
+    height: 40vh;
+  }
+  .swiper::before {
+    height: 70vh;
+  }
+  .swiper-slide img {
+    height: 40vh;
+  }
+  .nav-text-box h1 {
+    font-size: 1rem;
+  }
+  .nav-text-box {
+    height: 15vh;
   }
 
-  .flex-header-text-container h1 {
-    font-size: 1.8rem;
+  .nav-text-box ul li {
+    font-size: 0.5rem;
   }
-
-  .flex-header-text-container p {
+  .p-header {
     display: none;
   }
-  .header-flex-button {
-    font-size: 0.8rem;
+
+  .flex-movies-container {
+    width: 49%;
   }
   .flex-container-title {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: -27em;
   }
   .flex-container-title h2 {
     font-size: 1.5rem;
   }
-  .flex-movies-container {
-    width: 49%;
+  footer {
+    height: 90vh;
   }
-  .quality {
-    font-size: 0.6rem;
+  .footer-container {
+    width: 100%;
+  }
+  .icon-flex {
+    width: 100%;
   }
 }
 
-@media (min-width: 481px) {
-  .logo {
-    font-size: 1rem;
+@media (min-width: 360px) {
+  .flex-container-title {
+    margin-top: -28em;
   }
-  .flex-movies-container {
-    width: 19%;
-  }
-  .flex-header-text-container p {
-    display: contents;
-  }
-  .container-movies {
-    justify-content: flex-start;
-
-    gap: 0.3em;
-  }
-  .flex-card-box p {
-    font-size: 0.7rem;
+}
+@media (min-width: 414px) {
+  .flex-container-title {
+    margin-top: -30em;
   }
 }
 
 @media (min-width: 768px) {
-  .flex-header-text-container h1 {
-    font-size: 2rem;
+  .swiper {
+    height: 60vh;
+  }
+  .swiper::before {
+    height: 60vh;
+  }
+  .swiper-slide img {
+    height: 60vh;
+  }
+  .nav-text-box h1 {
+    font-size: 1.5rem;
+  }
+  .nav-text-box {
+    height: 20vh;
+  }
+
+  .nav-text-box ul li {
+    font-size: 1rem;
+  }
+  .p-header {
+    display: none;
   }
   .flex-movies-container {
-    width: 24%;
+    width: 49%;
   }
   .flex-container-title {
     flex-direction: row;
+    margin-top: -27em;
   }
+
   header nav ul {
-    display: flex;
-    gap: 1em;
-    font-size: 0.7rem;
+    display: none;
   }
   .flex-nav-container {
     flex-direction: column;
     gap: 2em;
   }
-  .flex-header-text-container {
-    width: 85%;
-  }
+
   .flex-card-box p {
     font-size: 0.8rem;
   }
@@ -563,11 +633,52 @@ strong {
   .quality {
     font-size: 0.8rem;
   }
+  .icon-flex {
+    width: 40%;
+  }
+  footer {
+    height: 60vh;
+  }
 }
 
 @media (min-width: 1024px) {
-  .flex-header-text-container h1 {
+  .mobile-nav {
+    display: none;
+  }
+
+  .swiper {
+    height: 100vh;
+  }
+  .swiper::before {
+    height: 100vh;
+  }
+  .swiper-slide img {
+    height: 150vh;
+  }
+  .nav-text-box h1 {
     font-size: 2.5rem;
+  }
+  .nav-text-box {
+    height: 30vh;
+  }
+
+  .nav-text-box ul li {
+    font-size: 1rem;
+  }
+  .p-header {
+    display: block;
+    width: 45%;
+  }
+  .flex-movies-container {
+    width: 18%;
+  }
+  .container-movies {
+    justify-content: space-between;
+    gap: 0.1em;
+  }
+  .flex-container-title {
+    flex-direction: row;
+    margin-top: 5em;
   }
 
   header nav ul {
@@ -588,24 +699,12 @@ strong {
 }
 
 @media (min-width: 1200px) {
-  .flex-header-text-container h1 {
-    font-size: 2.5rem;
-  }
-
-  .flex-nav-container {
-    flex-direction: row;
-    gap: 2em;
-  }
-  .header-flex-button {
-    font-size: 1rem;
-  }
   .flex-movies-container {
     width: 16%;
   }
   .container-movies {
     justify-content: flex-start;
-
-    gap: 0.5em;
+    gap: 0.6em;
   }
   .flex-card-box p {
     font-size: 1.2rem;

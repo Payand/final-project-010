@@ -19,7 +19,7 @@ const MovieMain = () => {
   return (
     <>
       <MoviesHeader />
-      <ContentDisplay movies={movies} />
+      <ContentDisplay movies={movies} type="movie" quantity={12} />
     </>
   );
 };

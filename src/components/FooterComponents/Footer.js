@@ -6,14 +6,6 @@ const Footer = () => {
       <div className="container">
         <div className="footer-display">
           <div className="footer-container">
-            <h3>Links</h3>
-            <ul>
-              <li>Movies</li>
-              <li>Tv shows</li>
-              <li>Top IMDB</li>
-            </ul>
-          </div>
-          <div className="footer-container">
             <h3>about us</h3>
             <p>
               <strong>TodayWatch</strong> is top of{" "}

@@ -26,9 +26,9 @@ const HeaderCarousel = ({ carousel }) => {
         keyboard={{
           enabled: true,
         }}
-        // pagination={{
-        //   clickable: true,
-        // }}
+        pagination={{
+          clickable: true,
+        }}
         modules={[Autoplay, EffectFade, Keyboard, Navigation, Pagination]}
         className="mySwiper"
       >

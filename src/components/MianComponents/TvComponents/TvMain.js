@@ -1,7 +1,8 @@
 import React from "react";
 
 import TvHeader from "./TvHeader";
-import ContentDisplayTv from "./ContentDisplayTv";
+
+import ContentDisplay from "../MovieComponent/ContentDisplay";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -21,7 +22,7 @@ const TvMain = () => {
   return (
     <>
       <TvHeader />
-      <ContentDisplayTv shows={shows} />
+      <ContentDisplay movies={shows} type="tv" quantity={12} />
     </>
   );
 };
