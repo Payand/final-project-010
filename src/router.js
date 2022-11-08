@@ -5,10 +5,12 @@ import HeaderNav from "./components/HeaderComponents/HeaderNav";
 import MovieMain from "./components/MianComponents/MovieComponent/MovieMain";
 import TvMain from "./components/MianComponents/TvComponents/TvMain";
 import MovieSingle from "./components/SingleComponents/MovieSingle";
+import { Toaster } from "react-hot-toast";
 import { api } from "./config";
 const router = createBrowserRouter([
   {
     element: <App />,
+
     children: [
       {
         path: "/",
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
           </>,
         ],
       },
+      {
+        path: "/movies",
+        element: [<MovieMain />],
+      },
     ],
   },
   {
@@ -27,6 +33,22 @@ const router = createBrowserRouter([
       <>
         <header>
           <HeaderNav nav={api.Header.nav} />
+          <Toaster
+            toastOptions={{
+              className: "toaster",
+              duration: 5000,
+              success: {
+                style: {
+                  background: "blue",
+                  color: "white",
+                  fontWeight: "600",
+                },
+              },
+              error: {
+                style: { background: "red", color: "black", fontWeight: "900" },
+              },
+            }}
+          />
         </header>
 
         <MovieSingle type="movie" />

@@ -20,6 +20,7 @@ body {
   font-family: "Raleway";
   text-transform: capitalize;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* container Starts */
@@ -46,6 +47,10 @@ header {
   width: 100%;
   height: 100vh;
 }
+.toaster {
+  width: 55%;
+  font-weight: 600;
+}
 
 nav {
   position: absolute;
@@ -59,17 +64,31 @@ nav {
 
   padding-top: 1.2em;
 }
-
+.ant-modal-content,
+.ant-modal-header {
+  background-color: rgb(0, 3, 56);
+  color: white;
+}
+.ant-modal-title {
+  color: white;
+}
+.ant-modal-footer {
+  display: none;
+}
+.ant-modal-body {
+  height: 65vh;
+}
 header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.5em;
-  color: #ffffff;
+
+  cursor: pointer;
 }
 
-header nav ul li a {
+header nav ul li {
   text-decoration: none;
   color: aliceblue;
   font-size: 1em;
@@ -88,6 +107,7 @@ header nav ul li i {
   padding-top: 0.2em;
   border-radius: 50%;
   margin-right: 0.5em;
+  cursor: pointer;
 }
 
 .search-flex {
@@ -95,7 +115,8 @@ header nav ul li i {
   flex-direction: row-reverse;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   background-color: rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
   border-radius: 1.5em;
@@ -104,7 +125,43 @@ input[type="text"] {
   padding-left: 3.4em;
   transition: background-color 2s;
 }
+.h-title-login {
+  color: white;
+  margin-bottom: 2em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.login-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1rem;
+  font-weight: 500;
+}
 
+.login-label input {
+  padding-left: 1em;
+}
+.button-login {
+  color: rgb(255, 255, 255);
+  background-color: #021b8a;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.3em;
+}
+.login-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-top: 2em;
+}
+.ant-modal-close {
+  color: white;
+}
 .search-flex button {
   margin-right: -2.9em;
   cursor: pointer;
@@ -213,7 +270,7 @@ input[type="text"]:hover {
 
 .button-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 2em;
 }
 .button-header button {
@@ -252,14 +309,13 @@ input[type="text"]:hover {
 }
 
 .flex-container-title span {
-  color: var(--h1-color);
-  font-size: 0.8rem;
-  border: rgb(129, 100, 255) solid 5px;
-  background-color: rgb(129, 100, 255);
+  color: blue;
+  font-size: 1rem;
+
   cursor: pointer;
 }
 .flex-container-title span i {
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 /* Section title movies ends  */
 
@@ -653,7 +709,7 @@ strong {
     height: 100vh;
   }
   .swiper-slide img {
-    height: 150vh;
+    height: 120vh;
   }
   .nav-text-box h1 {
     font-size: 2.5rem;

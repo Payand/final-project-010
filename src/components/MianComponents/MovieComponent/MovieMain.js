@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const MovieMain = () => {
+  console.log();
   const [movies, setMovies] = useState([]);
 
   const getMovies = async (termOne, termTwo) => {

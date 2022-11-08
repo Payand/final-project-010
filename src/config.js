@@ -16,7 +16,7 @@ export const api = {
         genre: ["Action", "Adventure"],
         description: `After thirty years, Maverick is still pushing the envelope as a top naval aviator,
         but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it.`,
-        image: "/image/tp.png",
+        image: "/image/top-gun-mav.jpg",
       },
 
       {
@@ -38,7 +38,7 @@ export const api = {
         genre: ["Action", "Sci-fi"],
         description: `As Steve Rogers struggles to embrace his role in the modern world,
          he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat from history: an assassin known as the Winter Soldier.`,
-        image: "/image/iron.jpg",
+        image: "/image/cp-winter-2.jpg",
       },
       {
         id: "4",

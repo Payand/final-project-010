@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { Button, Space, Spin } from "antd";
+import { Button } from "antd";
 
 const MovieSingle = ({ type }) => {
-  console.log(type);
   const [movie, setMovie] = useState({});
-  console.log(movie);
+
   const params = useParams();
 
   const getMovie = async () => {
@@ -23,10 +22,8 @@ const MovieSingle = ({ type }) => {
 
   return (
     <>
-      {!movie ? (
-        <Space size="middle">
-          <Spin size="large" />
-        </Space>
+      {!movie.poster_path ? (
+        <h1>Loading ...</h1>
       ) : (
         <div className="container">
           <div className="single-page">
