@@ -21,7 +21,7 @@ const MovieSingle = ({ type }) => {
 
   return (
     <>
-      {!movie.poster_path ? (
+      {!movie.id ? (
         <h1 style={{ color: "white" }}>Loading ...</h1>
       ) : (
         <div className="container">
@@ -56,7 +56,7 @@ const MovieSingle = ({ type }) => {
                     movie.title
                   ) : !movie.title ? (
                     movie.name
-                  ) : !movie.name || !movie.title ? (
+                  ) : !movie.name && !movie.title ? (
                     <p>loading...</p>
                   ) : (
                     <p>not given</p>
@@ -84,11 +84,11 @@ const MovieSingle = ({ type }) => {
                     <strong>Rate : </strong>
                     <span> {movie.vote_average} / 10</span>
                   </li>
-                  <li className="genra">
+                  {/* <li className="genra">
                     <strong>Genres:</strong>
                     <span>{movie.genres[0].name}/</span>
                     <span>{movie.genres[1].name}</span>
-                  </li>
+                  </li> */}
                 </ul>
                 {/* <div className="companies">
                 {movie.production_companies.map((comp) => {

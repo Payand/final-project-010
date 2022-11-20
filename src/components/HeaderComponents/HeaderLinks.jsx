@@ -1,4 +1,3 @@
-import HeaderSearch from "./HeaderSearch";
 import HeaderLogin from "./HeaderLogin";
 import { NavLink } from "react-router-dom";
 const HeaderLinks = ({ links }) => {
@@ -11,8 +10,9 @@ const HeaderLinks = ({ links }) => {
         <li>movies</li>
         <li>tv-series</li>
         <li>About us</li>
-
-        <HeaderSearch />
+        <NavLink to={"/search"}>
+          <li>Search</li>
+        </NavLink>
         <HeaderLogin />
       </ul>
     </>

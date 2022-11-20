@@ -7,6 +7,8 @@ import TvMain from "./components/MianComponents/TvComponents/TvMain";
 import MovieSingle from "./components/SingleComponents/MovieSingle";
 import { Toaster } from "react-hot-toast";
 import { api } from "./config";
+import HeaderSearch from "./components/HeaderComponents/SearchBox/HeaderSearch";
+import HeaderLogo from "./components/HeaderComponents/HeaderLogo";
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -66,9 +68,19 @@ const router = createBrowserRouter([
           <HeaderNav nav={api.Header.nav} />
         </header>
         <MovieSingle type="tv" />
-        {/* <div className="router-footer">
+        <div className="router-footer">
           <Footer />
-        </div> */}
+        </div>
+      </>
+    ),
+  },
+  {
+    path: "search",
+    element: (
+      <>
+        {" "}
+        <HeaderLogo />
+        <HeaderSearch />
       </>
     ),
   },
