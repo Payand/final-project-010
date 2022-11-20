@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const api = {
   Header: {
     nav: [
@@ -54,3 +56,10 @@ export const api = {
     ],
   },
 };
+
+export const theMoviedb = axios.create({
+  baseURL: "https://api.themoviedb.org/3/",
+  params: {
+    api_key: "b39a6d50962ff85858b03b950b6d3958",
+  },
+});

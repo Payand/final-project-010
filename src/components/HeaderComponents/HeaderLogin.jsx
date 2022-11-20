@@ -3,17 +3,13 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
 const HeaderLogin = () => {
-  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const { user, login, logout } = useContext(UserContext);
-  console.log(user);
+
   const showModal = () => {
     setOpen(true);
   };
   const handleOk = () => {
-    setLoading(true);
-
-    setLoading(false);
     setOpen(false);
   };
   const handleCancel = () => {
@@ -58,6 +54,7 @@ const HeaderLogin = () => {
             password
             <input type="password" id="password" required />
           </label>
+
           <div className="login-button-group">
             <button className="button-login" type="submit" onClick={handleOk}>
               login

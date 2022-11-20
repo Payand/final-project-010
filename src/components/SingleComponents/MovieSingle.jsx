@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { Button } from "antd";
 
 const MovieSingle = ({ type }) => {
-  const [movie, setMovie] = useState({});
-
+  const [movie, setMovie] = useState([]);
+  console.log(movie);
   const params = useParams();
 
   const getMovie = async () => {
@@ -18,12 +17,12 @@ const MovieSingle = ({ type }) => {
   };
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [params]);
 
   return (
     <>
       {!movie.poster_path ? (
-        <h1>Loading ...</h1>
+        <h1 style={{ color: "white" }}>Loading ...</h1>
       ) : (
         <div className="container">
           <div className="single-page">
@@ -65,42 +64,56 @@ const MovieSingle = ({ type }) => {
                   <strong>Rate : </strong>
                   <span> {movie.vote_average} / 10</span>
                 </li>
-                {/* <li className="genra">
-                <strong>Genres:</strong>
-                <span>{movie.genres[0].name}/</span>
-                <span>{movie.genres[1].name}</span>
-              </li> */}
+                <li className="genra">
+                  <strong>Genres:</strong>
+                  <span>{movie.genres[0].name}/</span>
+                  <span>{movie.genres[1].name}</span>
+                </li>
               </ul>
+              {/* <div className="companies">
+                {movie.production_companies.map((comp) => {
+                  return (
+                    <img
+                      className="logo-img"
+                      src={`https://image.tmdb.org/t/p/w200/${comp.logo_path}`}
+                    />
+                  );
+                })}
+              </div> */}
             </div>
-            <NavLink to={"/"}>
+
+            {/* <NavLink to={"/"}>
               <div className="button-header">
                 <Button type="primary">
                   <i className="fa-solid fa-arrow-left"></i>
                   Back
                 </Button>
               </div>
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
       )}
-
-      {/* <div className="iframe-box">
-          <iframe
-            width="400"
-            height="315"
-            src={`https://www.youtube.com/embed/`}
-          ></iframe>
-          <iframe
-            width="400"
-            height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY"
-          ></iframe>
-          <iframe
-            width="400"
-            height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY"
-          ></iframe>
-        </div> */}
+      <div className="container">
+        <div className="iframe-box">
+          {movie.videos ? (
+            movie.videos.results
+              .map((video) => {
+                return (
+                  <iframe
+                    title={movie.title || movie.name}
+                    width="420"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${video.key}`}
+                    allowFullScreen
+                  ></iframe>
+                );
+              })
+              .splice(0, 3)
+          ) : (
+            <h3 style={{ color: "red" }}>Slow Internet</h3>
+          )}
+        </div>
+      </div>
     </>
   );
 };

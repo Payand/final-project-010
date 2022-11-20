@@ -9,27 +9,8 @@ const baseUrl = "https://api.themoviedb.org/3";
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const [session, setSession] = useState(() => localStorage.getItem("session"));
-
-  const getUserAccount = async () => {
-    const { data } = await axios.get(
-      `${baseUrl}/account?api_key=${apiKey}&session_id=${session}`
-    );
-
-    setUser(data);
-  };
-
-  useEffect(() => {
-    if (session) {
-      getUserAccount();
-    }
-  }, [session]);
-
-  const logout = () => {
-    setUser(null);
-    setSession(() => localStorage.setItem("session", null));
-    toast.success("you logged out");
-  };
 
   const login = async (username, password) => {
     try {
@@ -45,7 +26,7 @@ const UserProvider = ({ children }) => {
           request_token: tokenResult.data.request_token,
         }
       );
-      console.log(auth);
+
       const session = await axios.post(
         `${baseUrl}/authentication/session/new?api_key=${apiKey}`,
         {
@@ -58,6 +39,25 @@ const UserProvider = ({ children }) => {
     } catch {
       toast.error("Wrong username or passwors");
     }
+  };
+
+  const getUserAccount = async () => {
+    const { data } = await axios.get(
+      `${baseUrl}/account?api_key=${apiKey}&session_id=${session}`
+    );
+    setUser(data);
+  };
+
+  useEffect(() => {
+    if (session) {
+      getUserAccount();
+    }
+  }, [session]);
+
+  const logout = () => {
+    setUser(null);
+    setSession(() => localStorage.clear());
+    toast.success("you logged out");
   };
 
   return (

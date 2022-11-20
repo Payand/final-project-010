@@ -1,18 +1,16 @@
 import ContentDisplay from "./ContentDisplay";
 import MoviesHeader from "./MovieHeader";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { theMoviedb } from "../../../config";
 
 const MovieMain = () => {
-  console.log();
   const [movies, setMovies] = useState([]);
 
   const getMovies = async (termOne, termTwo) => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${termOne}/${termTwo}?api_key=b39a6d50962ff85858b03b950b6d3958`
-    );
+    const { data } = await theMoviedb.get(`${termOne}/${termTwo}`);
     setMovies(data.results);
   };
+
   useEffect(() => {
     getMovies("movie", "popular");
   }, []);
