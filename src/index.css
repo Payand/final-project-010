@@ -106,7 +106,7 @@ header nav ul li i {
   text-align: center;
   padding-top: 0.2em;
   border-radius: 50%;
-  margin-right: 0.5em;
+  margin-right: 1em;
   cursor: pointer;
 }
 
@@ -519,7 +519,7 @@ strong {
   border-radius: 5px;
 }
 .router-footer {
-  margin-top: 20em;
+  margin-top: 40em;
   background-color: #0e0131;
 }
 .router-footer h3 {
@@ -531,6 +531,8 @@ strong {
 
 .single-page {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   width: 95%;
   height: 100vh;
   display: flex;
@@ -538,8 +540,13 @@ strong {
   margin-top: 10em;
   top: 0;
 }
+.single-content {
+  display: flex;
+  gap: 1em;
+}
 .single-page img {
   border-radius: 10px;
+  width: 200px;
 }
 .single-page h1 {
   font-size: 2rem;
@@ -578,8 +585,12 @@ strong {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15em;
+
   gap: 1em;
+}
+.iframe-box iframe {
+  width: 100%;
+  height: 100vh;
 }
 
 /* Resposive starts  */
@@ -629,7 +640,7 @@ strong {
     font-size: 1.5rem;
   }
   footer {
-    height: 90vh;
+    height: 50vh;
   }
   .footer-container {
     width: 100%;

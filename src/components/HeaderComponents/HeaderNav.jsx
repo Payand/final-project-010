@@ -3,14 +3,16 @@ import HeaderLinks from "./HeaderLinks";
 
 const HeaderNav = ({ nav }) => {
   return (
-    <nav>
-      <div className="container">
-        <div className="nav-container">
-          <HeaderLogo />
-          <HeaderLinks links={nav} />
+    <>
+      <nav>
+        <div className="container">
+          <div className="nav-container">
+            <HeaderLogo />
+            <HeaderLinks links={nav} />
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 export default HeaderNav;

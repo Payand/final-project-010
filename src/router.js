@@ -66,9 +66,9 @@ const router = createBrowserRouter([
           <HeaderNav nav={api.Header.nav} />
         </header>
         <MovieSingle type="tv" />
-        <div className="router-footer">
+        {/* <div className="router-footer">
           <Footer />
-        </div>
+        </div> */}
       </>
     ),
   },

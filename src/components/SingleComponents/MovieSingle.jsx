@@ -26,51 +26,71 @@ const MovieSingle = ({ type }) => {
       ) : (
         <div className="container">
           <div className="single-page">
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <div>
-              <h1 style={{ color: "white" }}>
-                {movie.title ? (
-                  movie.title
-                ) : !movie.title ? (
-                  movie.name
-                ) : !movie.name || !movie.title ? (
-                  <p>loading...</p>
-                ) : (
-                  <p>not given</p>
-                )}
-              </h1>
-              <ul>
-                {!movie.first_air_date ? (
-                  <li>
-                    <strong>Duration : </strong> <span>{movie.runtime}</span>{" "}
-                    min
-                  </li>
-                ) : (
-                  <li>
-                    <strong>Release Date : </strong>{" "}
-                    <span>{movie.first_air_date}</span>
-                  </li>
-                )}
+            <div className="iframe-box">
+              {movie.videos ? (
+                movie.videos.results
+                  .map((video) => {
+                    return (
+                      <iframe
+                        title={movie.title || movie.name}
+                        width="420"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${video.key}`}
+                        allowFullScreen
+                      ></iframe>
+                    );
+                  })
+                  .splice(0, 1)
+              ) : (
+                <h3 style={{ color: "red" }}>Slow Internet</h3>
+              )}
+            </div>
+            <div className="single-content">
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <div>
+                <h1 style={{ color: "white" }}>
+                  {movie.title ? (
+                    movie.title
+                  ) : !movie.title ? (
+                    movie.name
+                  ) : !movie.name || !movie.title ? (
+                    <p>loading...</p>
+                  ) : (
+                    <p>not given</p>
+                  )}
+                </h1>
+                <ul>
+                  {!movie.first_air_date ? (
+                    <li>
+                      <strong>Duration : </strong> <span>{movie.runtime}</span>{" "}
+                      min
+                    </li>
+                  ) : (
+                    <li>
+                      <strong>Release Date : </strong>{" "}
+                      <span>{movie.first_air_date}</span>
+                    </li>
+                  )}
 
-                <li>
-                  <p>
-                    <strong>Description : </strong> {movie.overview}
-                  </p>
-                </li>
-                <li>
-                  <strong>Rate : </strong>
-                  <span> {movie.vote_average} / 10</span>
-                </li>
-                <li className="genra">
-                  <strong>Genres:</strong>
-                  <span>{movie.genres[0].name}/</span>
-                  <span>{movie.genres[1].name}</span>
-                </li>
-              </ul>
-              {/* <div className="companies">
+                  <li>
+                    <p>
+                      <strong>Description : </strong> {movie.overview}
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Rate : </strong>
+                    <span> {movie.vote_average} / 10</span>
+                  </li>
+                  <li className="genra">
+                    <strong>Genres:</strong>
+                    <span>{movie.genres[0].name}/</span>
+                    <span>{movie.genres[1].name}</span>
+                  </li>
+                </ul>
+                {/* <div className="companies">
                 {movie.production_companies.map((comp) => {
                   return (
                     <img
@@ -80,6 +100,7 @@ const MovieSingle = ({ type }) => {
                   );
                 })}
               </div> */}
+              </div>
             </div>
 
             {/* <NavLink to={"/"}>
@@ -93,27 +114,6 @@ const MovieSingle = ({ type }) => {
           </div>
         </div>
       )}
-      <div className="container">
-        <div className="iframe-box">
-          {movie.videos ? (
-            movie.videos.results
-              .map((video) => {
-                return (
-                  <iframe
-                    title={movie.title || movie.name}
-                    width="420"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${video.key}`}
-                    allowFullScreen
-                  ></iframe>
-                );
-              })
-              .splice(0, 3)
-          ) : (
-            <h3 style={{ color: "red" }}>Slow Internet</h3>
-          )}
-        </div>
-      </div>
     </>
   );
 };

@@ -6,6 +6,7 @@ const Header = () => {
   return (
     <>
       <HeaderNav nav={api.Header.nav} />
+
       <HeaderCarousel carousel={api.Header.navDisplay} />
     </>
   );
