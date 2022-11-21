@@ -35,9 +35,11 @@ const HeaderLogin = () => {
           </li>
         </>
       ) : (
-        <li className="login-header" onClick={showModal}>
-          <i className="fa-solid fa-user"></i>Login/Register
-        </li>
+        <>
+          <li className="login-header" onClick={showModal}>
+            <i className="fa-solid fa-user"></i>Login/Register
+          </li>
+        </>
       )}
 
       <Modal open={open} onOk={handleOk} onCancel={handleCancel} footer={[]}>

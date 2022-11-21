@@ -1,6 +1,6 @@
 import HeaderLogin from "./HeaderLogin";
 import { NavLink } from "react-router-dom";
-const HeaderLinks = ({ links }) => {
+const HeaderLinks = () => {
   return (
     <>
       <ul>

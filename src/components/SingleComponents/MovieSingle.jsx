@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
+import { Space, Spin } from "antd";
 import { Button } from "antd";
 const MovieSingle = ({ type }) => {
   const [movie, setMovie] = useState([]);
@@ -23,7 +24,7 @@ const MovieSingle = ({ type }) => {
   return (
     <>
       {!movie.id ? (
-        <h1 style={{ color: "white" }}>Loading ...</h1>
+        <Spin size="large" />
       ) : (
         <div className="container">
           <div className="single-page">
@@ -48,13 +49,12 @@ const MovieSingle = ({ type }) => {
             )}
 
             <div className="iframe-box">
-              {movie.videos ? (
+              {movie.videos.results.length ? (
                 movie.videos.results
                   .map((video) => {
-                    console.log(video.key);
-
                     return (
                       <iframe
+                        key={video.id}
                         title={movie.title || movie.name}
                         width="420"
                         height="315"
@@ -65,14 +65,25 @@ const MovieSingle = ({ type }) => {
                   })
                   .splice(0, 1)
               ) : (
-                <h3 style={{ color: "red" }}>Slow Internet</h3>
+                <iframe
+                  title={movie.title || movie.name}
+                  width="420"
+                  height="315"
+                  src={`https://www.youtube.com/embed/9yOTlrxvpajgFHhv`}
+                  allowFullScreen
+                ></iframe>
               )}
             </div>
             <div className="single-content">
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                alt={movie.title}
-              />
+              {movie.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              ) : (
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" />
+              )}
+
               <div>
                 <h1 style={{ color: "white" }}>
                   {movie.title ? (
@@ -107,22 +118,13 @@ const MovieSingle = ({ type }) => {
                     <strong>Rate : </strong>
                     <span> {movie.vote_average} / 10</span>
                   </li>
-                  {/* <li className="genra">
+                  <li className="genra">
                     <strong>Genres:</strong>
-                    <span>{movie.genres[0].name}/</span>
-                    <span>{movie.genres[1].name}</span>
-                  </li> */}
+                    {movie.genres.map((gen) => {
+                      return <span key={gen.id}>{gen.name}/</span>;
+                    })}
+                  </li>
                 </ul>
-                {/* <div className="companies">
-                {movie.production_companies.map((comp) => {
-                  return (
-                    <img
-                      className="logo-img"
-                      src={`https://image.tmdb.org/t/p/w200/${comp.logo_path}`}
-                    />
-                  );
-                })}
-              </div> */}
               </div>
             </div>
           </div>

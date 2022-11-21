@@ -6,7 +6,7 @@ import { api } from "../../config";
 const Header = () => {
   return (
     <>
-      <HeaderNav nav={api.Header.nav} />
+      <HeaderNav />
 
       <HeaderCarousel carousel={api.Header.navDisplay} />
     </>

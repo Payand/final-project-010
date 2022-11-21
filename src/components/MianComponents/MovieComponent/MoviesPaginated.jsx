@@ -34,7 +34,7 @@ const Moviespaginated = ({ type }) => {
           <div className="flex-container-title">
             <h2>
               {type}
-              <samll>s</samll>
+              <small>s</small>
             </h2>
           </div>
         </div>

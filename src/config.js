@@ -63,3 +63,5 @@ export const theMoviedb = axios.create({
     api_key: "b39a6d50962ff85858b03b950b6d3958",
   },
 });
+
+export const defaultImg = "/image/blank.jpg";
