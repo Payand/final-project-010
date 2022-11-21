@@ -35,7 +35,7 @@ const HeaderLogin = () => {
           </li>
         </>
       ) : (
-        <li onClick={showModal}>
+        <li className="login-header" onClick={showModal}>
           <i className="fa-solid fa-user"></i>Login/Register
         </li>
       )}

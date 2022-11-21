@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
-
+import { useParams, NavLink } from "react-router-dom";
+import { Button } from "antd";
 const MovieSingle = ({ type }) => {
   const [movie, setMovie] = useState([]);
-  console.log(movie);
+
   const params = useParams();
 
   const getMovie = async () => {
@@ -17,6 +17,7 @@ const MovieSingle = ({ type }) => {
   };
   useEffect(() => {
     getMovie();
+    window.scroll(0, 0);
   }, [params]);
 
   return (
@@ -26,10 +27,32 @@ const MovieSingle = ({ type }) => {
       ) : (
         <div className="container">
           <div className="single-page">
+            {type === "movie" ? (
+              <NavLink to={"/all/movies"}>
+                <div className="button-header">
+                  <Button type="primary">
+                    <i className="fa-solid fa-arrow-left"></i>
+                    All movies
+                  </Button>
+                </div>
+              </NavLink>
+            ) : (
+              <NavLink to={"/all/tvs"}>
+                <div className="button-header">
+                  <Button type="primary">
+                    <i className="fa-solid fa-arrow-left"></i>
+                    All shows
+                  </Button>
+                </div>
+              </NavLink>
+            )}
+
             <div className="iframe-box">
               {movie.videos ? (
                 movie.videos.results
                   .map((video) => {
+                    console.log(video.key);
+
                     return (
                       <iframe
                         title={movie.title || movie.name}
@@ -102,15 +125,6 @@ const MovieSingle = ({ type }) => {
               </div> */}
               </div>
             </div>
-
-            {/* <NavLink to={"/"}>
-              <div className="button-header">
-                <Button type="primary">
-                  <i className="fa-solid fa-arrow-left"></i>
-                  Back
-                </Button>
-              </div>
-            </NavLink> */}
           </div>
         </div>
       )}

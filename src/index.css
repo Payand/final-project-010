@@ -99,17 +99,6 @@ header nav ul li a:hover {
   color: rgb(0, 132, 255);
 }
 
-header nav ul li i {
-  font-size: 1.2rem;
-  width: 1.5em;
-  height: 1.5em;
-  text-align: center;
-  padding-top: 0.2em;
-  border-radius: 50%;
-  margin-right: 1em;
-  cursor: pointer;
-}
-
 .search-flex {
   margin-top: 5em;
   width: 100%;
@@ -134,7 +123,7 @@ input[type="password"] {
   border-radius: 1.5em;
   height: 3em;
   width: 20em;
-  padding-left: 3.4em;
+  padding-left: 1em;
   transition: background-color 2s;
 }
 .h-title-login {
@@ -152,6 +141,10 @@ input[type="password"] {
   justify-content: space-around;
   font-size: 1rem;
   font-weight: 500;
+}
+.login-header {
+  display: flex;
+  gap: 1em;
 }
 
 .login-label input {
@@ -189,7 +182,7 @@ input[type="text"]:hover {
 }
 .search-results-ex {
   width: 100%;
-  background-color: #030144;
+  background-color: #030057;
   border-radius: 10px;
   height: 100vh;
   overflow: auto;
@@ -199,10 +192,27 @@ input[type="text"]:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 2em;
+
   margin-top: 1em;
   gap: 1em;
   cursor: pointer;
+}
+/* .search-results-tiltle {
+  font-size: 1rem;
+} */
+.search-results-container {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+}
+.search-results-container img {
+  border-radius: 10px;
+
+  width: 50px;
+}
+.title-result {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* navbar ends */
@@ -451,6 +461,36 @@ input[type="text"]:hover {
   font-size: 1rem;
   font-weight: 500;
 }
+/* All movies starts */
+.pagination-content {
+  width: 100%;
+  margin-top: 4em;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-content .ant-pagination li {
+  background-color: #021b8a5b;
+  border: 1px solid #002fff;
+}
+.ant-pagination-item a {
+  color: #002fff;
+}
+.ant-pagination-item-active a {
+  color: rgb(255, 255, 255);
+}
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link,
+.ant-select-selector {
+  background-color: #021b8a5b !important;
+  border: 1px solid #002fff !important;
+  color: white;
+}
+.anticon {
+  color: white !important;
+}
+
+/* All movies ends */
 
 /* Section movies and tv-shows end  */
 

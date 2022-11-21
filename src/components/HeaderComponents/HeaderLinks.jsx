@@ -7,11 +7,17 @@ const HeaderLinks = ({ links }) => {
         <NavLink to={"/"}>
           <li>home</li>
         </NavLink>
-        <li>movies</li>
-        <li>tv-series</li>
+        <NavLink to={"/all/movies"}>
+          <li>movies</li>
+        </NavLink>
+        <NavLink to={"/all/tvs"}>
+          <li>tv-series</li>
+        </NavLink>
         <li>About us</li>
         <NavLink to={"/search"}>
-          <li>Search</li>
+          <li>
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </li>
         </NavLink>
         <HeaderLogin />
       </ul>

@@ -49,15 +49,17 @@ const HeaderSearch = () => {
             type="text"
             name="serach"
             id="search"
-            placeholder="Enter your keywords"
+            placeholder="Enter your movie or tv or actor"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
         {searchResults.length && query ? (
           <div className="search-results-ex">
-            <div className="result-design">
-              {searchResults.map((item) => showItem(item))}
+            <div className="container">
+              <div className="result-design">
+                {searchResults.map((item) => showItem(item))}
+              </div>
             </div>
           </div>
         ) : (

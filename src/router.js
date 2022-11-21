@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import { api } from "./config";
 import HeaderSearch from "./components/HeaderComponents/SearchBox/HeaderSearch";
 import HeaderLogo from "./components/HeaderComponents/HeaderLogo";
+import Moviespaginated from "./components/MianComponents/MovieComponent/MoviesPaginated";
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -25,7 +26,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/movies",
-        element: [<MovieMain />],
+        element: <MovieMain />,
+      },
+      {
+        path: "/all/movies",
+        element: <Moviespaginated type={"movie"} />,
+      },
+      {
+        path: "/all/tvs",
+        element: <Moviespaginated type={"tv"} />,
       },
     ],
   },

@@ -7,7 +7,7 @@ const MovieMain = () => {
   const [movies, setMovies] = useState([]);
 
   const getMovies = async (termOne, termTwo) => {
-    const { data } = await theMoviedb.get(`${termOne}/${termTwo}`);
+    const { data } = await theMoviedb.get(`${termOne}/${termTwo}/`);
     setMovies(data.results);
   };
 
