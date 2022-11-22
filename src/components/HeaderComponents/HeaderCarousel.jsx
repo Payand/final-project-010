@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-// import HeaderButtons from "./HeaderButtons";
 
 import "swiper/css";
 import "swiper/css/navigation";

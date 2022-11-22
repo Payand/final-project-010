@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
-import { Space, Spin } from "antd";
+import { Spin } from "antd";
 import { Button } from "antd";
 const MovieSingle = ({ type }) => {
   const [movie, setMovie] = useState([]);
@@ -116,7 +116,7 @@ const MovieSingle = ({ type }) => {
                   </li>
                   <li>
                     <strong>Rate : </strong>
-                    <span> {movie.vote_average} / 10</span>
+                    <span> {String(movie.vote_average).slice(0, 3)} / 10</span>
                   </li>
                   <li className="genra">
                     <strong>Genres:</strong>

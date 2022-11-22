@@ -11,6 +11,8 @@ import PersonSingle from "./components/SingleComponents/PersonSingle";
 import HeaderSearch from "./components/HeaderComponents/SearchBox/HeaderSearch";
 import HeaderLogo from "./components/HeaderComponents/HeaderLogo";
 import Moviespaginated from "./components/MianComponents/MovieComponent/MoviesPaginated";
+import TvPaginated from "./components/MianComponents/TvComponents/TvPaginated";
+
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -35,11 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/all/movies",
-        element: <Moviespaginated type={"movie"} />,
+        element: <Moviespaginated />,
       },
       {
         path: "/all/tvs",
-        element: <Moviespaginated type={"tv"} />,
+        element: <TvPaginated />,
       },
     ],
   },
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <header>
-          <HeaderNav nav={api.Header.nav} />
+          <HeaderNav />
           <Toaster
             toastOptions={{
               className: "toaster",

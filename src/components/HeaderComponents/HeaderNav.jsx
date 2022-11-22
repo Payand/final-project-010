@@ -1,14 +1,18 @@
 import HeaderLogo from "./HeaderLogo";
 import HeaderLinks from "./HeaderLinks";
 
-const HeaderNav = ({ nav }) => {
+const HeaderNav = () => {
   return (
     <>
       <nav>
         <div className="container">
           <div className="nav-container">
-            <HeaderLogo />
-            <HeaderLinks links={nav} />
+            <div className="screen-nav">
+              <HeaderLogo />
+            </div>
+            <div className="screen-link">
+              <HeaderLinks />
+            </div>
           </div>
         </div>
       </nav>

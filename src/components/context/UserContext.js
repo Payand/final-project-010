@@ -37,7 +37,7 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("session", session.data.session_id);
       toast.success("Successfully logged in");
     } catch {
-      toast.error("Wrong username or passwors");
+      toast.error("Wrong username or password");
     }
   };
 

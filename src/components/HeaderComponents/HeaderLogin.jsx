@@ -4,6 +4,8 @@ import { UserContext } from "../context/UserContext";
 
 const HeaderLogin = () => {
   const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const { user, login, logout } = useContext(UserContext);
 
   const showModal = () => {
@@ -37,7 +39,7 @@ const HeaderLogin = () => {
       ) : (
         <>
           <li className="login-header" onClick={showModal}>
-            <i className="fa-solid fa-user"></i>Login/Register
+            <i className="fa-solid fa-user"></i>Login
           </li>
         </>
       )}
@@ -49,18 +51,35 @@ const HeaderLogin = () => {
         <form className="login-form" onSubmit={handleLogin} id="loginForm">
           <label className="login-label" htmlFor="username">
             UserName
-            <input type="text" id="username" required />
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
           </label>
 
           <label className="login-label" htmlFor="password">
             password
-            <input type="password" id="password" required />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </label>
 
           <div className="login-button-group">
-            <button className="button-login" type="submit" onClick={handleOk}>
-              login
-            </button>
+            {!username || !password ? (
+              <p className="warning">Please,Enter Email and password</p>
+            ) : (
+              <button className="button-login" type="submit" onClick={handleOk}>
+                login
+              </button>
+            )}
+
             <button className="button-login" onClick={handleCancel}>
               return
             </button>

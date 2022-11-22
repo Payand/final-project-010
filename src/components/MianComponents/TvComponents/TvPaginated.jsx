@@ -2,8 +2,8 @@ import React from "react";
 import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 import { theMoviedb } from "../../../config";
-import ContentDisplay from "./ContentDisplay";
-const Moviespaginated = () => {
+import ContentDisplay from "../MovieComponent/ContentDisplay";
+const TvPaginated = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState();
 
@@ -20,7 +20,7 @@ const Moviespaginated = () => {
   };
 
   useEffect(() => {
-    getMovies("movie", "popular");
+    getMovies("tv", "popular");
     window.scroll(0, 500);
   }, [page]);
 
@@ -29,11 +29,11 @@ const Moviespaginated = () => {
       <section>
         <div className="container">
           <div className="flex-container-title">
-            <h2>Movies</h2>
+            <h2>Tvs</h2>
           </div>
         </div>
       </section>
-      <ContentDisplay movies={movies} type={"movie"} quantity={20} />
+      <ContentDisplay movies={movies} type={"tv"} quantity={20} />
       <div className="container">
         <div className="pagination-content">
           <Pagination defaultCurrent={page} total={500} onChange={onChange} />
@@ -43,4 +43,4 @@ const Moviespaginated = () => {
   );
 };
 
-export default Moviespaginated;
+export default TvPaginated;
